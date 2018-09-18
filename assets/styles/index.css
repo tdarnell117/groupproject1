@@ -6,6 +6,10 @@ body{
     margin-bottom: 20px;
 }
 
+#acctBtn{
+    margin-left: 10px;
+}
+
 #PageName{
     font-size: 30px;
     font-weight: bold;
@@ -15,9 +19,6 @@ body{
     font-size: 20px;
 }
 
-.bg-light{
-    background: blue;
-}
 
 .font {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
