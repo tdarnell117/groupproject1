@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Best Food Recipe</title>
+    <title>CookBook</title>
 
      <!-- Bootstrap CDN Library -->
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+     
+     <!-- Bootstrap CDN Library Ionic Framework for button icon -->
+     <link href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css" rel="stylesheet">
+     
      <!-- My style-->
      <link rel="stylesheet" type="text/css" href="./assets/styles/index.css">
-     
-    
+
 </head>
 
 <body>
@@ -31,14 +32,17 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>     
+                    </li>    
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">View Feedback <span class="sr-only">(current)</span></a>
+                    </li>   
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" id="food-input" placeholder="Find a Recipe" aria-label="Search">
-                    <button class="btn btn-info" id="search-recipe-btn" type="submit">Search Recipe</button>
+                    <a href="Recipe.html" class="btn btn-info btn-md" id="search-recipe-btn" data-target="Recipe.html" ><span class="icon ion-md-search"></span></a>
                 </form>
-                <button class="btn btn-outline-success my-2 my-sm-0" id="acctBtn" type="submit">Create an Account</button>
-                <button class="btn btn-outline-success my-2 my-sm-0" id="acctBtn" type="submit">Login</button>
+                <a href="#signup-section" class="btn btn-info btn-md" id="sign-up-btn"><span class="icon ion-md-person-add"></span></a>
+                <a href="#" class="btn btn-info btn-md" id="log-in-btn"><span class="icon ion-md-person"></span></a>
             </div>
         </nav>
     </div>
@@ -51,11 +55,8 @@
             <p class="lead font">This is a place for beginning and advanced home cooks to find simple yet challenging recipes to improve your culinary skills, or just impress some friends!</p>
             <hr class="my-4">
             <p class="font">Start looking for an addition to your cookbook here.</p>
-            <button class="btn btn-primary" id="searchrecipe" type="submit">Let's Cook!</button>
+            <a href="Recipe.html" class="btn btn-primary" id="searchrecipe" type="submit">Let's Cook!</span></a>
         </div>
-    </div>
-
-    <div class="container" id="search-result-section">
     </div>
 
     <!--Feedback Section -->
@@ -69,28 +70,54 @@
             </div>
             <div class="card-body">
                 <div class="container">
-                    <form>
-                        <div class="form-group">
-                            <label for="FormControlInput1">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="First Name Last Name">
+                    <form>   
+                        <div class="form-group">  
+                            <textarea class="form-control" id="comments" placeholder="Comments" rows="5"></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="FormControlInput2">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="ormControlTextarea1">Comments</label>
-                            <textarea class="form-control" id="comments" placeholder="Comments" rows="10"></textarea>
-                        </div>
-                        <button type="button" class="btn btn-primary btn-sm" id="SubmitBtn">Submit</button>
+                        <button type="button" class="btn btn-info btn-sm" id="Submit-feedback-Btn">Submit</button>
                     </form>                 
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- jQuery -->
+    <!--Sign up Section -->
+    <!--Card Container-->
+    <div class="container" id="signup-section"> 
+        <div class="card">
+            <div class="card-header">
+                <p class="font2">Create your Cookbook Account</p>
+            </div>
+            <div class="card-body">
+                <div class="container">
+                    <form>
+                        <div class="form-group">
+                            <label for="FormControlInput1">User Name</label>
+                            <input type="text" class="form-control" id="user-name" placeholder="User Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="FormControlInput3">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="FormControlInput3">Password</label>
+                            <input type="text" class="form-control" id="password" placeholder="password">
+                        </div>
+                        <button type="button" class="btn btn-info btn-sm" id="Submit-Acct-Btn">Submit</button>
+                    </form>                 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ajax Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ 
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
 
     <!-- My Script -->
     <script src="./assets/scripts/index.js"></script>
