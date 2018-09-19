@@ -1,10 +1,11 @@
 
 
-var url = "https://api.yummly.com/v1/api/recipes?_app_id=fc9ece1f&_app_key=235229a497e877c3ca37916f4cdd111c"
+var url = "https://www.food2fork.com/api/search?key=a1d99e1e0791dbbde08d37d85656f5f0&q="
 $(".searchbutton").on("click", function()
 {
   event.preventDefault();
-  url = url + "&q=" + $(".search").val(); 
+  url = url + $(".search").val();
+  console.log(url) 
   getAPI();
 })
 
