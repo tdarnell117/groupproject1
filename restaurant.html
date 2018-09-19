@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hoang Cao Word Guess Game</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Hoang Cao Group Project1" />
+    <meta name="keywords" content="Computer, Software, Developer, Hoang, Engineering" />
+    <meta name="author" content="Hoang Cao" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- Latest compiled JavaScript -->
+    <script>
+
+// Client ID = ZG3CSSKDK1E2KO102JCEI35ZMR3W4MNA21TOLPMSJGUZPGSW
+// Client Secret = WDRB1NR0CN3V2NFRMIV5AVRG5QJI3Q31WKA1RWPVYFQ4XUOZ
+
+    fetch('https://www.food2fork.com/api/search?key=a1d99e1e0791dbbde08d37d85656f5f0&&rId=35382')
+            .then(function (r) {
+                return r.json();
+            })
+            .then(function(data){
+                console.log(data);
+            })
+            .catch(function (e) {
+                console.error(e)
+            });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+
+</html>
