@@ -9,6 +9,11 @@ $(".searchbutton").on("click", function()
   getAPI();
 })
 
+$(document).on("click", "img", function() {  
+  
+
+})
+
 
 function getAPI()
 {
