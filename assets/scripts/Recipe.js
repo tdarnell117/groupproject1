@@ -35,7 +35,11 @@ $(document).on("click", "img", function() {
   }
   localStorage.setItem("nameofFood", $("img.icon").attr("data-nameofDish"));
   console.log(localStorage.getItem("nameofFood"));  
+<<<<<<< HEAD
   window.location.href = "./repcipePage.html";
+=======
+  window.location.href = "recipePage.html";
+>>>>>>> e313e9850668b022b83ceb27fe3a531fb98738f5
 
 })
 
