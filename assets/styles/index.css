@@ -11,6 +11,11 @@ body{
     font-weight: bold;
 }
 
+#chef-img{
+    border-radius: 50%;
+    border: solid 2px black;
+    padding: 2px;
+}
 
 #txtEmail, #txtPassword, #btnSignUp, #btnLogin{
     border-radius: 3px;
