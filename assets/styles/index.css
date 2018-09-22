@@ -40,7 +40,6 @@ body{
     margin-right: 10px;
 }
 
-
 .font {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
@@ -78,14 +77,13 @@ li{
     display: inline-block;
 }
 
-img{
-    margin-right: 10px;
-}
-
 .form-group{
     margin-top: 5px;
 }
 
 #search-prompt{
     display: inline;
+
+img{
+    margin-right: 10px;
 }

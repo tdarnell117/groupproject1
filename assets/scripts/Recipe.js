@@ -1,8 +1,8 @@
-
 //Click button function
 var url = "";
 var urlWal = "";
 var ingredients = new Array();
+
 $(".searchbutton").on("click", function(event)
 {
   event.preventDefault();
@@ -85,3 +85,4 @@ $('#search-recipe-btn').on("click", function(event){
   document.getElementById("food-input").value = ""; 
   var url = $(this).data('target');                          
 })
+
