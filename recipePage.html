@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Best Food Recipe</title>
+
+    <!-- Bootstrap CDN Library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <!-- My style-->
+    <link rel="stylesheet" type="text/css" href="">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" id="PageName" href="index.html">CookBook</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Dropdown Menu
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 searchItem" type="search" placeholder="Find Recipe, Find Restaurat"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0 searchButton" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <!-- input name of dish -->
+                    </div>
+                    <div class="card-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input type="radio" aria-label="Radio button for following text input">
+                                    <div class="viewIngredient">
+                                        hello
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Latest compiled JavaScript -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+
+
+        var url = "https://api.yummly.com/v1/api/recipes?_app_id=fc9ece1f&_app_key=235229a497e877c3ca37916f4cdd111c"
+        $(".searchButton").on("click", function () {
+            event.preventDefault();
+            url = url + "&q=" + $(".searchItem").val() + "&requirePictures=true" + "&maxResult=1&start=1";
+            console.log(url)
+            // getAPI();
+            checkmarkText();
+        })
+
+        // function getAPI() {
+        //     fetch(url)
+        //         .then(function (r) {
+        //             return r.json();
+        //         })
+        //         .then(function (data) {
+        //             console.log(data);
+        //         })
+        //         .catch(function (err) {
+        //             console.error('Fetch Error :-S', err);
+        //         });
+        // }
+
+
+        document.getElementById("result").innerHTML = localStorage.getItem("nameofFood");
+            } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
+
+        function checkmarkText() {
+            $("#viewIngredient").html("");
+            var newDiv = $("<div>");
+            newDiv.append("<p>  " +  + "</p>");
+            $("#viewIngredient").append(newDiv);
+        }
+        var newDiv = $("<div>");
+        newDiv.css("clear", "both");
+        $("#viewIngredient").append(newDiv);
+            }
+        });
+        }
+
+
+    </script>
+
+
+</body>
+
+
+</html>
