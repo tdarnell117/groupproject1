@@ -1,9 +1,9 @@
-
 //Click button function
 var url = "";
 var urlWal = "";
 var ingredients = new Array();
-$(".searchbutton").on("click", function()
+
+$(".searchbutton").on("click", function(event)
 {
   event.preventDefault();
   $(".RecipePicture").empty();
@@ -75,4 +75,14 @@ function getAPI()
       console.error('Fetch Error :-S', err);
     });
 }
+
+$('#search-recipe-btn').on("click", function(event){
+  event.preventDefault()
+  // Grabs user input
+  var searchfood = $("#food-input").val().trim();
+
+  // Clear input box
+  document.getElementById("food-input").value = ""; 
+  var url = $(this).data('target');                          
+})
 

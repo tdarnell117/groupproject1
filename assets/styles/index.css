@@ -11,12 +11,33 @@ body{
     font-weight: bold;
 }
 
-#SubmitBtn{
+
+#txtEmail, #txtPassword, #btnSignUp, #btnLogin{
+    border-radius: 3px;
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+#txtEmail, #txtPassword{
+    border: 1px solid lightgray;
+}
+
+#header-nav{
+   justify-content: space-between;
+}
+
+#acctBtn{
+    margin-left: 10px;
+}
+
+#Submit-feedback-Btn, #View-feedback-Btn, #Submit-Acct-Btn{
+    margin-top: 10px;
     font-size: 20px;
 }
 
-.bg-light{
-    background: blue;
+#search-recipe-btn, #sign-up-btn, #log-in-btn{
+    margin-right: 10px;
 }
 
 .font {
@@ -46,24 +67,22 @@ body{
     background-repeat: no-repeat;
 }
 
-#center {
-    text-align: center;
-}
-
-.center2 {
-    text-align: center;
-    margin-top: 80px;
-    margin-bottom: 40px;
-}
-
 .icon{
     margin-bottom: 20px;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
 }
 
 li{
     display: inline-block;
+}
+
+.form-group{
+    margin-top: 5px;
+}
+
+#search-prompt{
+    display: inline;
 }
 
 img{

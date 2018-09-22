@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="Team6 Group Project1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Recipe</title>
+    <title>feedback</title>
 
     <!-- Bootstrap CDN Library -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -21,8 +21,8 @@
 </head>
 
 <body>
-   <!-- Navbar -->
-   <div class="container">
+    <!-- Navbar -->
+    <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-nav">
             <a class="navbar-brand" id="PageName" href="index.html">CookBook</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,6 @@
                     <button id="btnSignUp" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Sign Up"><span class="icon ion-md-person-add"></span></button>
                     <button id="btnLogin" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Login"><span class="icon ion-md-person"></span></button>
         
-                    <!--Dropdown user button-->        
                     <div id="userInfo" class="dropdown d-none">
                         <button class="btn btn-info dropdown-toggle" type="button" id="userInfoBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Username
@@ -54,14 +53,10 @@
         </nav>
     </div>
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <form class="form-inline" action="/action_page.php">
-            <input class="form-control mr-sm-2 search" type="text" placeholder="Search">
-                <button class="btn btn-success searchbutton" type="submit">Search</button>
-        </form>
-    </nav>
-
-    <div class = "RecipePicture">
+    <!--Display Feedback Section -->
+    <div class="container"> 
+        <div class="card" id="comment-section">       
+        </div>
     </div>
 
     <!-- JQuery -->
@@ -83,5 +78,5 @@
     <script src="./assets/scripts/firebase.js"></script>
     <script src="./assets/scripts/Recipe.js"></script>
 
-</body>     
+</body>
 </html>
