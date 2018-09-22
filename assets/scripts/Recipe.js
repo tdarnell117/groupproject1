@@ -3,8 +3,9 @@ var url = "";
 var urlDrink =""
 var urlWal = "";
 var ingredients = new Array();
+var nameofDish = "";
 
-$(".searchfoodbutton").on("click", function()
+$(".searchfoodbutton").on("click", function(event)
 {
   event.preventDefault();
   $(".RecipePicture").empty();
@@ -12,9 +13,8 @@ $(".searchfoodbutton").on("click", function()
   getfoodAPI();
 })
 
-$(".searchdrinkbutton").on("click", function()
+$(".searchdrinkbutton").on("click", function(event)
 {
-  
   event.preventDefault();
   $(".DrinkPicture").empty();
   urlDrink = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + $(".searchdrink").val();
@@ -33,6 +33,10 @@ $(document).on("click", "img", function() {
       }
     } 
   }
+  localStorage.setItem("nameofFood", $("img.icon").attr("data-nameofDish"));
+  console.log(localStorage.getItem("nameofFood"));  
+  //window.location.href = "repcipePage.html";
+
 })
 
 //get API from Walmart
@@ -62,6 +66,7 @@ function getfoodAPI()
     {
       for(i = 0; i<10; i++)
       {
+        var Dish = data.matches[i].recipeName;
         var imgDiv = $("<li>");
         var imgURL = data.matches[i].imageUrlsBySize["90"]; 
         ingredients[i] = data.matches[i].ingredients;
@@ -70,8 +75,9 @@ function getfoodAPI()
         var image = $("<img>");
         image.attr("src", imgURL);
         image.attr("class", "icon");
-        image.attr("data-ingre", i);
-        imgDiv.append(rate);
+        image.attr("data-ingre", i)
+        image.attr("data-nameofDish", Dish);
+        imgDiv.append(rate);;
         imgDiv.append(time);
         imgDiv.append(image);
         $(".RecipePicture").prepend(imgDiv);
