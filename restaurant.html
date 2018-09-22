@@ -1,38 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Hoang Cao Word Guess Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Best Food Recipe</title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Hoang Cao Group Project1" />
-    <meta name="keywords" content="Computer, Software, Developer, Hoang, Engineering" />
-    <meta name="author" content="Hoang Cao" />
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    <!-- Bootstrap CDN Library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+
+    <!-- My style-->
+    <link rel="stylesheet" type="text/css" href="">
+
 </head>
 
 <body>
 
+    <!-- Navbar -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" id="PageName" href="index.html">CookBook</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Dropdown Menu
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 searchItem" type="search" placeholder="Find Recipe, Find Restaurat"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0 searchButton" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <!-- input name of dish -->
+                    </div>
+                    <div class="card-body">
+                        <img src="$" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input type="radio" aria-label="Radio button for following text input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Feedback Section -->
+    <!--Card Container-->
+   
+    
     <!-- Latest compiled JavaScript -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
     <script>
 
-// Client ID = ZG3CSSKDK1E2KO102JCEI35ZMR3W4MNA21TOLPMSJGUZPGSW
-// Client Secret = WDRB1NR0CN3V2NFRMIV5AVRG5QJI3Q31WKA1RWPVYFQ4XUOZ
 
-    fetch('https://www.food2fork.com/api/search?key=a1d99e1e0791dbbde08d37d85656f5f0&&rId=35382')
+        // App Key = Z235229a497e877c3ca37916f4cdd111c
+        // App ID = fc9ece1f
+
+        fetch('http://api.walmartlabs.com/v1/search?apiKey={apiKey}&lsPublisherId={Your LinkShare Publisher Id}&query=ipod')
             .then(function (r) {
                 return r.json();
             })
-            .then(function(data){
+            .then(function (data) {
                 console.log(data);
             })
             .catch(function (e) {
                 console.error(e)
             });
+
+
+
+        var url = "https://api.yummly.com/v1/api/recipes?_app_id=fc9ece1f&_app_key=235229a497e877c3ca37916f4cdd111c"
+        $(".searchbutton").on("click", function () {
+            event.preventDefault();
+            url = url + "&q=" + $(".search").val() + "&requirePictures=true" + "&maxResult=10&start=10";
+            console.log(url)
+            getAPI();
+        })
+
+        function getAPI() {
+            fetch(url)
+                .then(function (r) {
+                    return r.json();
+                })
+                .then(function (data) {
+                    console.log(data);
+                })
+                .catch(function (err) {
+                    console.error('Fetch Error :-S', err);
+                });
+        }
     </script>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
