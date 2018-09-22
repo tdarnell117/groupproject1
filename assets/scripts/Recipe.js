@@ -1,12 +1,11 @@
-
 //Click button function
 var url = "";
 var urlDrink =""
 var urlWal = "";
 var ingredients = new Array();
+
 $(".searchfoodbutton").on("click", function()
 {
-  
   event.preventDefault();
   $(".RecipePicture").empty();
   url = "https://api.yummly.com/v1/api/recipes?_app_id=fc9ece1f&_app_key=235229a497e877c3ca37916f4cdd111c" + "&q=" + $(".searchfood").val() +"&requirePictures=true" + "&maxResult=10&start=10";
@@ -115,4 +114,14 @@ function getdrinkAPI()
       });
   }
 
+
+$('#search-recipe-btn').on("click", function(event){
+  event.preventDefault()
+  // Grabs user input
+  var searchfood = $("#food-input").val().trim();
+
+  // Clear input box
+  document.getElementById("food-input").value = ""; 
+  var url = $(this).data('target');                          
+})
 
