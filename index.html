@@ -2,124 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Team6 Group Project1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Best Food Recipe</title>
+    <title>Cookbook</title>
 
-     <!-- Bootstrap CDN Library -->
+    <!-- Bootstrap CDN Library -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-     <!-- My style-->
-     <link rel="stylesheet" type="text/css" href="./assets/styles/index.css">
+  
+    <!-- Ionic Framework for button icon -->
+    <link href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css" rel="stylesheet">
 
-     <!--firebase-->
-     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
-     <link rel="stylesheet" href="style.css">
-    
+    <!-- My style-->
+    <link rel="stylesheet" type="text/css" href="./assets/styles/index.css">
+
 </head>
+
 <body>
+   <!-- Navbar -->
+   <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-nav">
+            <a class="navbar-brand" id="PageName" href="index.html">CookBook</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>   
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" id="food-input" placeholder="Find a Recipe" aria-label="Search">
+                    <a href="Recipe.html" class="btn btn-info btn-md" id="search-recipe-btn" data-target="Recipe.html" data-toggle="tooltip" title="Search" ><span class="icon ion-md-search"></span></a>
+            </form>       
 
-        <!-- Navbar -->
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" id="PageName" href="index.html">CookBook</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown Menu
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Find Recipe, Find Restaurat" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </div>
-            </nav>
-        </div>
-
-        <!--Simply, Recipes! Section -->
-        <!--Jumbotron Container-->
-        <div class="container">
-            <div class="jumbotron">
-                <h1 class="display-4 font">Simply, Recipes!</h1>
-                <p class="lead font">This is a place for beginning and advanced home cooks to find simple yet challenging recipes to improve your culinary skills, or just impress some friends!</p>
-                <hr class="my-4">
-                <p class="font">Start looking for an addition to your cookbook here.</p>
-                <a class="btn-lg btnstyle" href="#" role="button">Let's Cook!</a>
-            </div>
-        </div>
-
-        <!--Feedback Section -->
-        <!--Card Container-->
-        <div class="container"> 
-            <div class="card">
-                <div class="card-header">
-                    <p class="font2">If you enjoyed our recipes and would like to help us improve our website,<br>
-                                     please give us your feedback below!
-                    </p>
-                </div>
-                <div class="card-body">
-                    <div class="container">
-                        <form>
-                            <div class="form-group margin1">
-                              <textarea class="form-control" rows="8"></textarea>
-                            </div>
-                            <div id="center">
-                                <button type="button" class="btn btn-primary btn-sm" id="SubmitBtn">Submit</button>
-                            </div>
-                        </form>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <input id="txtEmail" class="d-none" type="email" placeholder="Email">
+                    <input id="txtPassword" class="d-none" type="password" placeholder="Password">         
+                    <button id="btnSignUp" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Sign Up"><span class="icon ion-md-person-add"></span></button>
+                    <button id="btnLogin" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Login"><span class="icon ion-md-person"></span></button>
+        
+                    <div id="userInfo" class="dropdown d-none">
+                        <button class="btn btn-info dropdown-toggle" type="button" id="userInfoBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Username
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="button">Settings</button>
+                            <button class="dropdown-item" type="button">Your Favourite Recipes</button>
+                            <button id="btnLogout" class="dropdown-item btn btn-info" type="button">Log out</button>
+                        </div>
                     </div>
-                </div>
             </div>
-        </div>
+        </nav>
+    </div>
 
-<!-- Footer -->
-<footer class="page-footer font-small special-color-dark pt-4">
+    <!--Simply, Recipes! Section -->
+    <!--Jumbotron Container-->
     <div class="container">
-        <input id="txtEmail" class="d-none" type="email" placeholder="Email">
-        <input id="txtPassword" class="d-none" type="password" placeholder="Password">
-        <button id="btnLogin" type="button" class="btn btn-action d-none">Log in</button>
-        <button id="btnSignUp" type="button" class="btn btn-secondary d-none">Sign up</button>
-       <!-- <button id="btnLogout" type="button" class="btn btn-action d-none">Log out</button>-->
-    
-
-<!--Dropdown user button-->        
-<div id="userInfo" class="dropdown d-none">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="userInfoBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Username
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <button class="dropdown-item" type="button">Settings</button>
-          <button class="dropdown-item" type="button">Your Recipes</button>
-          <button id="btnLogout" class="dropdown-item btn btn-action" type="button">Log out</button>
+        <div class="jumbotron">
+            <h1 class="display-4 font">Simply, Recipes!</h1>
+            <p class="lead font">This is a place for beginning and advanced home cooks to find simple yet challenging recipes to improve your culinary skills, or just impress some friends!</p>
+            <hr class="my-4">
+            <p class="font">Start looking for an addition to your cookbook here.</p>
+            <a class="btn-lg btnstyle" href="Recipe.html" role="button">Let's Cook!</a>
         </div>
-      </div>
-</footer>
+    </div>
+          
+    <!--Feedback Section -->
+    <!--Card Container-->
+    <div class="container" id="feedback-section"> 
+        <div class="card">
+            <div class="card-header">
+                <p class="font2">If you enjoyed our recipes and would like to help us improve our website,<br>
+                                    please give us your feedback below!
+                </p>
+            </div>
+            
+            <div class="card-body">
+                <div class="container">
+                    <form>   
+                        <div class="form-group">  
+                            <textarea class="form-control" id="comments-input" placeholder="Comments" rows="5"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-info btn-sm" id="Submit-feedback-Btn" data-toggle="tooltip" title="Submit">Submit</button>
+                        <a href="feedback.html">
+                            <button type="button" class="btn btn-info btn-sm" id="View-feedback-Btn" data-toggle="tooltip" title="View Feedback">View Feedback</button>
+                        </a>
+                    </form>                    
+                </div>
+             </div>
+        </div>
+    </div>
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   
+    <!-- AJAX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   
+    <!-- Bootsstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
-<script src="firebase.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+
+    <!-- My js page -->
+    <script src="./assets/scripts/firebase.js"></script>
+    <script src="./assets/scripts/Recipe.js"></script>
 </body>
 </html>
