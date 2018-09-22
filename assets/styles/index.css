@@ -36,8 +36,12 @@ body{
     font-size: 20px;
 }
 
-#search-recipe-btn, #sign-up-btn, #log-in-btn{
+#sign-up-btn, #log-in-btn{
     margin-right: 10px;
+}
+
+#lets-cook-btn{
+    font-size: 40px
 }
 
 .font {

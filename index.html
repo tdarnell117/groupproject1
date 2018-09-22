@@ -25,14 +25,7 @@
    <!-- Navbar -->
    <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-nav">
-            <a class="navbar-brand" id="PageName" href="index.html">CookBook</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>   
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" id="food-input" placeholder="Find a Recipe" aria-label="Search">
-                    <a href="Recipe.html" class="btn btn-info btn-md" id="search-recipe-btn" data-target="Recipe.html" data-toggle="tooltip" title="Search" ><span class="icon ion-md-search"></span></a>
-            </form>       
+            <a class="navbar-brand" id="PageName" href="index.html">CookBook</a>   
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <input id="txtEmail" class="d-none" type="email" placeholder="Email">
@@ -62,7 +55,9 @@
             <p class="lead font">This is a place for beginning and advanced home cooks to find simple yet challenging recipes to improve your culinary skills, or just impress some friends!</p>
             <hr class="my-4">
             <p class="font">Start looking for an addition to your cookbook here.</p>
-            <a class="btn-lg btnstyle" href="Recipe.html" role="button">Let's Cook!</a>
+            <a href="Recipe.html">
+                <button type="button" class="btn btn-info btn-bg" id="lets-cook-btn" data-toggle="tooltip" title="Click Me!">Let's Cook!</button>
+            </a>
         </div>
     </div>
           
