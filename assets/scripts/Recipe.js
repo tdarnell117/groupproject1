@@ -21,21 +21,19 @@ $(".searchdrinkbutton").on("click", function()
   getdrinkAPI();
 })
 
-// //click on pictures function
-// $(document).on("click", "img", function() {  
-//   for(i = 0; i <10; i++)
-//   {
-//     for(j = 0; j <10; j++)
-//     {
-//       if(ingredients[i][j] != null)
-//       {
-//         urlWal = "http://api.walmartlabs.com/v1/search?query=" + ingredients[i][j].split(' ').join('+')  + "&format=json&apiKey=fxakkxrnjkuqrj2wnqjyd97m"
-//         //console.log(urlWal)
-//         //getAPIWalmart();
-//       }
-//     } 
-//   }
-// })
+//click on pictures function
+$(document).on("click", "img", function() {  
+  for(i = 0; i <10; i++)
+  {
+    for(j = 0; j <10; j++)
+    {
+      if(ingredients[i][j] != null)
+      {
+        
+      }
+    } 
+  }
+})
 
 //get API from Walmart
 function getAPIWalmart()
