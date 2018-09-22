@@ -29,27 +29,32 @@
 
     <!-- Navbar -->
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-nav">
             <a class="navbar-brand" id="PageName" href="index.html">CookBook</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-            
+            </button>   
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" id="food-input" placeholder="Find a Recipe" aria-label="Search">
+                    <a href="Recipe.html" class="btn btn-info btn-md" id="search-recipe-btn" data-target="Recipe.html" data-toggle="tooltip" title="Search" ><span class="icon ion-md-search"></span></a>
+            </form>       
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>    
-                    <li class="nav-item">
-                        <a class="nav-link" href="feedback.html">View Feedback <span class="sr-only">(current)</span></a>
-                    </li>   
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" id="food-input" placeholder="Find a Recipe" aria-label="Search">
-                    <a href="Recipe.html" class="btn btn-info btn-md" id="search-recipe-btn"><span class="icon ion-md-search"></span></a>
-                </form>
-                <a href="#signup-section" class="btn btn-info btn-md" id="sign-up-btn"><span class="icon ion-md-person-add"></span></a>
-                <a href="#" class="btn btn-info btn-md" id="log-in-btn"><span class="icon ion-md-person"></span></a>
+                    <input id="txtEmail" class="d-none" type="email" placeholder="Email">
+                    <input id="txtPassword" class="d-none" type="password" placeholder="Password">         
+                    <button id="btnSignUp" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Sign Up"><span class="icon ion-md-person-add"></span></button>
+                    <button id="btnLogin" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Login"><span class="icon ion-md-person"></span></button>
+        
+                    <div id="userInfo" class="dropdown d-none">
+                        <button class="btn btn-info dropdown-toggle" type="button" id="userInfoBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Username
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="button">Settings</button>
+                            <button class="dropdown-item" type="button">Your Favourite Recipes</button>
+                            <button id="btnLogout" class="dropdown-item btn btn-info" type="button">Log out</button>
+                        </div>
+                    </div>
             </div>
         </nav>
     </div>
