@@ -125,6 +125,14 @@
         //         });
         // }
 
+        if (typeof (Storage) !== "undefined") {
+                // Store
+                sessionStorage.setItem("ingredients", "Smith");
+                // Retrieve
+                document.getElementById("result").innerHTML = sessionStorage.getItem("lastname");
+            } else {
+                document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+            }
 
         function checkmarkText() {
             fetch(url)
@@ -145,6 +153,8 @@
                     }
                 });
         }
+
+
     </script>
 
 
