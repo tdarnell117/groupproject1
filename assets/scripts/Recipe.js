@@ -1,14 +1,12 @@
 //Click button function
 var url = "";
 var urlDrink =""
-var urlWal = "";
 var ingredients = new Array();
-var nameofDish = "";
+
 
 $(".searchfoodbutton").on("click", function(event)
 {
   event.preventDefault();
-  $(".RecipePicture").empty();
   url = "https://api.yummly.com/v1/api/recipes?_app_id=fc9ece1f&_app_key=235229a497e877c3ca37916f4cdd111c" + "&q=" + $(".searchfood").val() +"&requirePictures=true" + "&maxResult=10&start=10";
   getfoodAPI();
 })
@@ -16,44 +14,27 @@ $(".searchfoodbutton").on("click", function(event)
 $(".searchdrinkbutton").on("click", function(event)
 {
   event.preventDefault();
-  $(".DrinkPicture").empty();
   urlDrink = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + $(".searchdrink").val();
   getdrinkAPI();
 })
 
 //click on pictures function
-$(document).on("click", "img", function() {  
-  for(i = 0; i <10; i++)
-  {
-    for(j = 0; j <10; j++)
-    {
-      if(ingredients[i][j] != null)
-      {
-        
-      }
-    } 
-  }
-  localStorage.setItem("nameofFood", $("img.icon").attr("data-nameofDish"));
-  console.log(localStorage.getItem("nameofFood"));  
-  //window.location.href = "repcipePage.html";
 
+$(document).on("click", "img.icon", function() {  
+console.log($(this).attr("data-nameofDish"));
+console.log($(this).attr("data-ingre"));
+for(i = 0; i <10; i++)
+{
+  for(j = 0; j <10; j++)
+  {
+    if(ingredients[i][j] != null)
+    {
+      //console.log(ingredients[i][j])
+    }
+  }
+} 
 })
 
-//get API from Walmart
-function getAPIWalmart()
-{
-  fetch(urlWal,{ mode: 'no-cors'})     
-  .then(function(r) {
-      return r.json();
-        })  
-  .then(function(data)
-    {
-      console.log(data)
-    })
-  .catch(function(err) {
-    console.error('Fetch Error :-S', err);
-  });
-}
 
 //get API and add images, rating in html
 function getfoodAPI()
@@ -64,9 +45,12 @@ function getfoodAPI()
         })  
   .then(function(data)
     {
+      $('.RecipePicture').empty()
+      $('.DrinkPicture').empty()
       for(i = 0; i<10; i++)
       {
         var Dish = data.matches[i].recipeName;
+        var DishImg = data.matches[i].recipeName;
         var imgDiv = $("<li>");
         var imgURL = data.matches[i].imageUrlsBySize["90"]; 
         ingredients[i] = data.matches[i].ingredients;
@@ -97,11 +81,12 @@ function getdrinkAPI()
         })  
   .then(function(data)
     {
+      $('.RecipePicture').empty()
+      $('.DrinkPicture').empty()
       for(i = 0; i<10; i++)
       {
       var imgDiv = $("<li>");
       var imgURL = data.drinks[i].strDrinkThumb; 
-      console.log(imgURL)
       // ingredients[i] = data.matches[i].ingredients;
       var category = $("<p>").text(data.drinks[i].strCategory);  
       // var time = $("<p>").text("Time: " +data.matches[i].totalTimeInSeconds);  
