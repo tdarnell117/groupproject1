@@ -51,23 +51,44 @@
         </div>
     </div>
 
-    <!-- Search Recipe Section -->
-    <div class="col-md-12 jumbotron" id="container-recipe">
-        <form class="form-inline" action="/action_page.php">
-            <input class="form-control mr-sm-2 searchfood" type="text" placeholder="Search Food">
+    <div class="container Searchcontainer">
+            <form class="form-inline" action="/action_page.php">
+                <input class="form-control mr-sm-2 searchfood" type="text" placeholder="Search Food">
                 <button class="btn btn-success searchfoodbutton" type="submit">Search Food Recipe</button>
-        </form>
-
-        <form class="form-inline" action="/action_page.php">
-            <input class="form-control mr-sm-2 searchdrink" type="text" placeholder="Search Drink">
+            </form>  
+            <form class="form-inline" action="/action_page.php">
+                <input class="form-control mr-sm-2 searchdrink" type="text" placeholder="Search Drink">
                 <button class="btn btn-success searchdrinkbutton" type="submit">Search Cocktail Recipe</button>
-        </form>
+            </form>
+        </div>
+    
+        <div class="RecipePicture container"></div>
+        <div class="DrinkPicture"></div>
+    
+        <div class="container afterClick">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header specificRecipe">
+                           header
+                        </div>
+                        <div class="card-body foodPic">
+                            body
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            Ingredients
+                        </div>
+                        <div class="card-body ingredientList">
+    
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary btn-lg btn-block" role="button" aria-pressed="true">View the Recipe</a>
+                </div>
+            </div>
+        </div>
 
-        <div class = "RecipePicture">
-        <div class = "DrinkPicture">  
-    </div>
-
-        
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    
