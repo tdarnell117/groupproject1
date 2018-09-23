@@ -1,8 +1,11 @@
 //Click button function
-var url = "";
-var urlDrink =""
-var ingredients = new Array();
+var url = ""
+var urlDrink = ""
+var ingredients = new Array()
+var Dish = ""
+var imgURL = ""
 
+$(".afterClick").hide();
 
 $(".searchfoodbutton").on("click", function(event)
 {
@@ -21,8 +24,14 @@ $(".searchdrinkbutton").on("click", function(event)
 //click on pictures function
 $(document).on("click", "img.icon", function() 
 {  
-  console.log($(this).attr("data-nameofDish"));
+  $('.RecipePicture').empty()
+  $('.DrinkPicture').empty()
+  $(".afterClick").show();
+  $(".Searchcontainer").hide();
+  Dish = ($(this).attr("data-nameofDish"));
+  imgURL = ($(this).attr("data-ImageofDish"));
   console.log($(this).attr("data-ingre"));
+  chosenRecipe();
   for(i = 0; i <10; i++)
   {
     for(j = 0; j <10; j++)
@@ -51,10 +60,9 @@ function getfoodAPI()
       $('.DrinkPicture').empty()
       for(i = 0; i<10; i++)
       {
-        var Dish = data.matches[i].recipeName;
-        var DishImg = data.matches[i].recipeName;
+        Dish = data.matches[i].recipeName;
         var imgDiv = $("<li>");
-        var imgURL = data.matches[i].imageUrlsBySize["90"]; 
+        imgURL = data.matches[i].imageUrlsBySize["90"]; 
         ingredients[i] = data.matches[i].ingredients;
         var rate = $("<p>").text("Rating: " + data.matches[i].rating);  
         var time = $("<p>").text("Time: " +data.matches[i].totalTimeInSeconds);  
@@ -63,6 +71,7 @@ function getfoodAPI()
         image.attr("class", "icon");
         image.attr("data-ingre", i)
         image.attr("data-nameofDish", Dish);
+        image.attr("data-ImageofDish", imgURL);
         imgDiv.append(rate);;
         imgDiv.append(time);
         imgDiv.append(image);
@@ -107,6 +116,30 @@ function getdrinkAPI()
       });
   }
 
+  function chosenRecipe() {
+    fetch(url)
+        .then(function (r) {
+            return r.json();
+        })
+        .then(function (data) {           
+            var nameofFoodDiv = $("<div>")
+            var foodPic = $("<div>")
+            var liDiv = $("<li>")
+            var dish = $("<h2>").text(Dish);
+            var image = $("<img>");
+            image.attr("src", imgURL);
+            nameofFoodDiv.append(dish);
+            foodPic.append(image);
+            liDiv.append(ingredients);
+            $(".specificRecipe").prepend(nameofFoodDiv);
+            $(".foodPic").prepend(foodPic)
+            $(".ingredientList").prepend(liDiv)
+            })  
+        .catch(function (err) {
+            console.error('Fetch Error :-S', err);
+        });
+}
+
 
 $('#search-recipe-btn').on("click", function(event)
 {
@@ -118,3 +151,5 @@ $('#search-recipe-btn').on("click", function(event)
   document.getElementById("food-input").value = ""; 
   var url = $(this).data('target');                          
 })
+
+
