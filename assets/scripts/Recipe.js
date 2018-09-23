@@ -71,7 +71,7 @@ function getfoodAPI()
         var imgURL = data.matches[i].imageUrlsBySize["90"]; 
         ingredients[i] = data.matches[i].ingredients;
         var rate = $("<p>").text("Rating: " + data.matches[i].rating);  
-        var time = $("<p>").text("Time: " +data.matches[i].totalTimeInSeconds);  
+        var time = $("<p>").text("Cook Time: " +data.matches[i].totalTimeInSeconds);  
         var image = $("<img>");
         image.attr("src", imgURL);
         image.attr("class", "icon");
@@ -87,7 +87,7 @@ function getfoodAPI()
   .catch(function(err) {
       console.error('Fetch Error :-S', err);
     });
-  }
+}
 
 function getdrinkAPI()
 {
@@ -118,16 +118,6 @@ function getdrinkAPI()
     .catch(function(err) {
         console.error('Fetch Error :-S', err);
       });
-  }
+}
 
-
-$('#search-recipe-btn').on("click", function(event){
-  event.preventDefault()
-  // Grabs user input
-  var searchfood = $("#food-input").val().trim();
-
-  // Clear input box
-  document.getElementById("food-input").value = ""; 
-  var url = $(this).data('target');                          
-})
 
