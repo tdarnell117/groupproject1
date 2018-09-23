@@ -24,11 +24,10 @@
    <!-- Navbar -->
    <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-nav">
-            <a class="navbar-brand" id="PageName" href="index.html">CookBook</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>     
+            <!-- Page logo -->
+            <a class="navbar-brand" id="PageName" href="index.html"><img src="./assets/images/chef.jpg" id="chef-img" alt="chef" width="80" height="80">CookBook</a>   
 
+            <!-- Login Section -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <input id="txtEmail" class="d-none" type="email" placeholder="Email">
                     <input id="txtPassword" class="d-none" type="password" placeholder="Password">         
@@ -50,24 +49,22 @@
         </nav>
     </div>
 
-  
-            <form class="form-inline" action="/action_page.php">
-                <input class="form-control mr-sm-2 searchfood" type="text" placeholder="Search Food">
-                    <button class="btn btn-success searchfoodbutton" type="submit">Search Food Recipe</button>
-            </form>
-       
-        
-      
-            <form class="form-inline" action="/action_page.php">
-                <input class="form-control mr-sm-2 searchdrink" type="text" placeholder="Search Drink">
-                    <button class="btn btn-success searchdrinkbutton" type="submit">Search Cocktail Recipe</button>
-            </form>
+    <div class="container">
+        <form class="form-inline" action="/action_page.php">
+            <input class="form-control mr-sm-2 searchfood" type="text" placeholder="Search Food">
+                <button class="btn btn-success searchfoodbutton" type="submit">Search Food Recipe</button>
+        </form>
+
+        <form class="form-inline" action="/action_page.php">
+            <input class="form-control mr-sm-2 searchdrink" type="text" placeholder="Search Drink">
+                <button class="btn btn-success searchdrinkbutton" type="submit">Search Cocktail Recipe</button>
+        </form>
+    </div>
      
         
-        <div class = "RecipePicture"></div>
-        <div class = "DrinkPicture"> </div>
-        
-
+    <div class = "RecipePicture">
+    <div class = "DrinkPicture"> 
+  
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    

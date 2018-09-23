@@ -19,21 +19,23 @@ $(".searchdrinkbutton").on("click", function(event)
 })
 
 //click on pictures function
-
-$(document).on("click", "img.icon", function() {  
-console.log($(this).attr("data-nameofDish"));
-console.log($(this).attr("data-ingre"));
-for(i = 0; i <10; i++)
-{
-  for(j = 0; j <10; j++)
+$(document).on("click", "img.icon", function() 
+{  
+  console.log($(this).attr("data-nameofDish"));
+  console.log($(this).attr("data-ingre"));
+  for(i = 0; i <10; i++)
   {
-    if(ingredients[i][j] != null)
+    for(j = 0; j <10; j++)
     {
-      //console.log(ingredients[i][j])
+      if(ingredients[i][j] != null)
+      {
+        //console.log(ingredients[i][j])
+      }
     }
-  }
-} 
+  } 
 })
+
+
 
 
 //get API and add images, rating in html
@@ -106,7 +108,8 @@ function getdrinkAPI()
   }
 
 
-$('#search-recipe-btn').on("click", function(event){
+$('#search-recipe-btn').on("click", function(event)
+{
   event.preventDefault()
   // Grabs user input
   var searchfood = $("#food-input").val().trim();
@@ -115,4 +118,3 @@ $('#search-recipe-btn').on("click", function(event){
   document.getElementById("food-input").value = ""; 
   var url = $(this).data('target');                          
 })
-

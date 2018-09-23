@@ -11,6 +11,11 @@ body{
     font-weight: bold;
 }
 
+#chef-img{
+    border-radius: 50%;
+    border: solid 2px black;
+    padding: 2px;
+}
 
 #txtEmail, #txtPassword, #btnSignUp, #btnLogin{
     border-radius: 3px;
@@ -36,8 +41,12 @@ body{
     font-size: 20px;
 }
 
-#search-recipe-btn, #sign-up-btn, #log-in-btn{
+#sign-up-btn, #log-in-btn{
     margin-right: 10px;
+}
+
+#lets-cook-btn{
+    font-size: 40px
 }
 
 .font {
@@ -87,4 +96,8 @@ li{
 
 img{
     margin-right: 10px;
+}
+
+.card-body{
+    background-color: white;
 }
