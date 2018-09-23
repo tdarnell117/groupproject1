@@ -23,19 +23,19 @@ $(".searchdrinkbutton").on("click", function(event)
 
 //click on pictures function
 $(document).on("click", "img", function() {  
-  for(i = 0; i <10; i++)
-  {
-    for(j = 0; j <10; j++)
-    {
-      if(ingredients[i][j] != null)
-      {
+  // for(i = 0; i <10; i++)
+  // {
+  //   for(j = 0; j <10; j++)
+  //   {
+  //     if(ingredients[i][j] != null)
+  //     {
         
-      }
-    } 
-  }
-  localStorage.setItem("nameofFood", $("img.icon").attr("data-nameofDish"));
-  console.log(localStorage.getItem("nameofFood"));  
-  window.location.href = "recipePage.html";
+  //     }
+  //   } 
+  // }
+  // localStorage.setItem("nameofFood", $("img.icon").attr("data-nameofDish"));
+  // console.log(localStorage.getItem("nameofFood"));  
+  // window.location.href = "recipePage.html";
 
 })
 
