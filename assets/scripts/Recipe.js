@@ -131,7 +131,13 @@ function getdrinkAPI()
             image.attr("src", imgURL);
             nameofFoodDiv.append(dish);
             foodPic.append(image);
-            liDiv.append(ingredients);
+            for(i = 0; i <10; i++)
+            {
+              if(ingredients[firstarray][i] != null)
+              {
+                liDiv.append(ingredients[firstarray][i] + ", ");
+              }
+            }
             $(".specificRecipe").prepend(nameofFoodDiv);
             $(".foodPic").prepend(foodPic)
             $(".ingredientList").prepend(liDiv)
@@ -147,7 +153,7 @@ $('#search-recipe-btn').on("click", function(event)
   event.preventDefault()
   // Grabs user input
   var searchfood = $("#food-input").val().trim()
-}
+})
 
 
 
