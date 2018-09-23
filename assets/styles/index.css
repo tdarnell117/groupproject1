@@ -97,3 +97,7 @@ li{
 img{
     margin-right: 10px;
 }
+
+.card-body{
+    background-color: white;
+}
