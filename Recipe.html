@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Team6 Group Project1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Recipe</title>
@@ -11,56 +11,56 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  
+   
     <!-- Ionic Framework for button icon -->
     <link href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css" rel="stylesheet">
 
     <!-- My style-->
     <link rel="stylesheet" type="text/css" href="./assets/styles/index.css">
-    
+
 </head>
 
 <body>
-   <!-- Navbar -->
-   <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-nav">
-            <!-- Page logo -->
-            <a class="navbar-brand" id="PageName" href="index.html"><img src="./assets/images/chef.jpg" id="chef-img" alt="chef" width="80" height="80">CookBook</a>   
-
-            <!-- Login Section -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <input id="txtEmail" class="d-none" type="email" placeholder="Email">
-                    <input id="txtPassword" class="d-none" type="password" placeholder="Password">         
-                    <button id="btnSignUp" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Sign Up"><span class="icon ion-md-person-add"></span></button>
-                    <button id="btnLogin" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Login"><span class="icon ion-md-person"></span></button>
-        
-                    <!--Dropdown user button-->        
-                    <div id="userInfo" class="dropdown d-none">
-                        <button class="btn btn-info dropdown-toggle" type="button" id="userInfoBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Username
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="button">Settings</button>
-                            <button class="dropdown-item" type="button">Your Favourite Recipes</button>
-                            <button id="btnLogout" class="dropdown-item btn btn-info" type="button">Log out</button>
-                        </div>
+    <!-- Navbar  -->
+    <div class="navbar navbar-default navbar-fix-top navbar-expand" id="header-nav"> 
+        <div class="navbar-header">   
+                <a class="navbar-brand" id="PageName" href="index.html" >
+                    <img src="./assets/images/chef.jpg" id="chef-img" width="100" height= "100" alt="chef">CookBook
+                    <img src="./assets/images/dishes.jpg" id="dishes-img" width="auto" height= "100" alt="chef">
+                </a>   
+        </div>
+        <!-- Login Section -->
+        <div class="collapse navbar-collapse justify-content-end">
+            <ul class="nav navbar-nav">
+                <input id="txtEmail" class="d-none" type="email" placeholder="Email">
+                <input id="txtPassword" class="d-none" type="password" placeholder="Password">        
+                <button id="btnSignUp" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Sign Up"><span class="icon ion-md-person-add Signup-Icon"></span></button>
+                <button id="btnLogin" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Login"><span class="icon ion-md-person Login-Icon"></span></button>     
+                <!-- Dropdwon list after login -->
+                <div id="userInfo" class="dropdown d-none">
+                    <button class="btn btn-info dropdown-toggle" type="button" id="userInfoBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Username
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="button">Settings</button>
+                        <button class="dropdown-item" type="button">Your Favourite Recipes</button>
+                        <button id="btnLogout" class="dropdown-item btn btn-info" type="button">Log out</button>
                     </div>
-            </div>
-        </nav>
+                </div>         
+            </ul> 
+        </div>
     </div>
 
     <div class="container Searchcontainer">
             <form class="form-inline" action="/action_page.php">
                 <input class="form-control mr-sm-2 searchfood" type="text" placeholder="Search Food">
                 <button class="btn btn-success searchfoodbutton" type="submit">Search Food Recipe</button>
-            </form>
-    
+            </form>  
             <form class="form-inline" action="/action_page.php">
                 <input class="form-control mr-sm-2 searchdrink" type="text" placeholder="Search Drink">
                 <button class="btn btn-success searchdrinkbutton" type="submit">Search Cocktail Recipe</button>
             </form>
         </div>
-    
     
         <div class="RecipePicture container"></div>
         <div class="DrinkPicture"></div>
@@ -88,7 +88,7 @@
                 </div>
             </div>
         </div>
-  
+
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    
