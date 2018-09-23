@@ -4,6 +4,7 @@ var urlDrink = ""
 var ingredients = new Array()
 var Dish = ""
 var imgURL = ""
+var firstarray = ""
 
 $(".afterClick").hide();
 
@@ -28,9 +29,9 @@ $(document).on("click", "img.icon", function()
   $('.DrinkPicture').empty()
   $(".afterClick").show();
   $(".Searchcontainer").hide();
-  Dish = ($(this).attr("data-nameofDish"));
-  imgURL = ($(this).attr("data-ImageofDish"));
-  console.log($(this).attr("data-ingre"));
+  Dish = $(this).attr("data-nameofDish");
+  imgURL = $(this).attr("data-ImageofDish");
+  firstarray = $(this).attr("data-ingre");
   chosenRecipe();
   for(i = 0; i <10; i++)
   {
