@@ -109,19 +109,23 @@
     // 3. Create Firebase event for adding comments in database 
     //    and display in feedback page
     feedbackdb.ref().on("child_added", function(childSnapshot) {
-    console.log(childSnapshot.val());
+      // console.log(childSnapshot.val());
+      // console.log(childSnapshot.numChildren());
+    
+      // Store everything into a variable.
+      var userComm = childSnapshot.val().userComments;
+      var subDate = childSnapshot.val().submitDate;
+    
+      // Create the new comment row
+      var newComment = $("<div>").append(
+          $("<h3>").text(userComm),
+          $("<h6>").text(subDate),
+          $("</div>")
+      );
   
-    // Store everything into a variable.
-    var userComm = childSnapshot.val().userComments;
-    var subDate = childSnapshot.val().submitDate;
-  
-    // Create the new row
-    var newComment = $("#comment-section").append(
-      $("<p>").text(userComm),
-      $("</p>").text(subDate)
-    )
-    // Append to html
-    $("#comment-section").append(newComment);
+      // Append the new row to the table
+      $("#feedback-area").append(newComment)
+
   })
   
 }());

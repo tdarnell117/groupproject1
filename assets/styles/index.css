@@ -64,11 +64,14 @@ body{
 #chef-img{
     border-radius: 50%;
     padding: 2px;
+    width: 100px;
+    height: 100px;
 }
 
-.dishes-img{
-    width: 100%;
-    height: auto;
+#dishes-img{
+    border: 1px solid black;
+    width: auto;
+    height: 100px;
 }
 
 #navbarSupportedContent{
@@ -148,6 +151,10 @@ h2{
     color: black;
 }
 
+#feedback-input-header, #feedback-output-header{
+    background-color: rgb(236, 233, 226);
+}
+
 
 .btnstyle {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -182,6 +189,9 @@ li{
 
 img{
     margin-right: 10px;
+    border: 3px solid wheat;
+    width: 300px;
+    height: 300px;
 }
 
 .card{
@@ -204,18 +214,27 @@ img{
     margin-right: 90px;
 }
 
+#feedback-output-section{
+    width: 55%;
+}
 
 .RecipePicture, .DrinkPicture{
     margin-top: 10px;
     margin-right: 600px;
     margin-left: 20px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
 }
 
-#container-comment, #container-recipe{
+#container-comment, #container-recipe, #container-recipe-detail{
     width: 100%;
     height: 900px;
 }
 
+#container-comment{
+    display: inline-block;
+}
 
 #footer-Icon{
     font-size: 50px;
@@ -244,12 +263,54 @@ img{
 .searchfoodbutton, .searchdrinkbutton{ 
     margin-right: 40px;
     margin-bottom: 10px;
+    font-size: 18px;
 }
 
 .searchfood, .searchdrink{
     margin-bottom: 10px;
+    font-size: 18px;
+    height: 45px;
 }
 
 .afterClick{
     color: black;
+}
+
+
+#feedback-area{
+    font-size: 20px;
+    font-family: cursive;
+    color: white;
+    line-height: 200%;
+}
+
+h6{
+    margin-bottom: 30px;
+}
+
+#feed-header{
+    font-size: 40px;
+}
+
+div.a{
+    border: 1px solid wheat;
+}
+
+.specificRecipe{
+    background-color: dodgerblue;
+}
+
+.specificRecipe-Ingredients{
+    background-color: lightskyblue;
+}
+
+
+.ingredientHead{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ingredientList{
+    font-size: 18px;
 }
