@@ -114,10 +114,7 @@ function getdrinkAPI()
     .catch(function(err) {
         console.error('Fetch Error :-S', err);
       });
-<<<<<<< HEAD
-})
-=======
-  }
+}
 
   function chosenRecipe() {
     fetch(url)
@@ -142,7 +139,6 @@ function getdrinkAPI()
             console.error('Fetch Error :-S', err);
         });
 }
->>>>>>> master
 
 
 $('#search-recipe-btn').on("click", function(event)
