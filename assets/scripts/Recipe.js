@@ -2,8 +2,13 @@
 var url = ""
 var urlDrink = ""
 var ingredients = new Array()
+var Drinkingredients = new Array()
 var Dish = ""
 var imgURL = ""
+var Diskimg = ""
+var firstarray = ""
+var secondarray = ""
+var Drink = ""
 
 $(".afterClick").hide();
 
@@ -28,24 +33,16 @@ $(document).on("click", "img.icon", function()
   $('.DrinkPicture').empty()
   $(".afterClick").show();
   $(".Searchcontainer").hide();
-  Dish = ($(this).attr("data-nameofDish"));
-  imgURL = ($(this).attr("data-ImageofDish"));
-  console.log($(this).attr("data-ingre"));
-  chosenRecipe();
-  for(i = 0; i <10; i++)
-  {
-    for(j = 0; j <10; j++)
-    {
-      if(ingredients[i][j] != null)
-      {
-        //console.log(ingredients[i][j])
-      }
-    }
-  } 
+  Dish = $(this).attr("data-nameofDish");
+  imgURL = $(this).attr("data-ImageofDish");
+  firstarray = $(this).attr("data-ingre");
+  secondarray = $(this).attr("data-ingre2");
+  Drink = $(this).attr("data-nameofDrink");
+  Diskimg = $(this).attr("src");
+  
+  FoodRecipe(); 
+  CocktailRecipe();
 })
-
-
-
 
 //get API and add images, rating in html
 function getfoodAPI()
@@ -64,8 +61,8 @@ function getfoodAPI()
         var imgDiv = $("<li>");
         imgURL = data.matches[i].imageUrlsBySize["90"]; 
         ingredients[i] = data.matches[i].ingredients;
-        var rate = $("<p>").text("Rating: " + data.matches[i].rating);  
-        var time = $("<p>").text("Cook Time: " +data.matches[i].totalTimeInSeconds);  
+        var rate = $("<h6>").text("Rating: " + data.matches[i].rating);  
+        var time = $("<h6>").text("Cook Time: " +data.matches[i].totalTimeInSeconds);  
         var image = $("<img>");
         image.attr("src", imgURL);
         image.attr("class", "icon");
@@ -96,19 +93,21 @@ function getdrinkAPI()
       $('.DrinkPicture').empty()
       for(i = 0; i<10; i++)
       {
-      var imgDiv = $("<li>");
-      var imgURL = data.drinks[i].strDrinkThumb; 
-      // ingredients[i] = data.matches[i].ingredients;
-      var category = $("<p>").text(data.drinks[i].strCategory);  
-      // var time = $("<p>").text("Time: " +data.matches[i].totalTimeInSeconds);  
-      var image = $("<img>");
-      image.attr("src", imgURL);
-      image.attr("class", "icon");
-      image.attr("data-ingre", i);
-      // imgDiv.append(rate);
-      imgDiv.append(category);
-      imgDiv.append(image);
-      $(".DrinkPicture").prepend(imgDiv);
+        Drink = data.drinks[i].strDrink;
+        var imgDiv = $("<li>");
+        Diskimg = data.drinks[i].strDrinkThumb; 
+        Drinkingredients[i] = [data.drinks[i].strIngredient1,data.drinks[i].strIngredient2,data.drinks[i].strIngredient3,
+        data.drinks[i].strIngredient4,data.drinks[i].strIngredient5,data.drinks[i].strIngredient6,data.drinks[i].strIngredient7,
+        data.drinks[i].strIngredient8,data.drinks[i].strIngredient9,data.drinks[i].strIngredient10]
+        var category = $("<p>").text(data.drinks[i].strCategory); 
+        var image = $("<img>");
+        image.attr("src", Diskimg);
+        image.attr("class", "icon");
+        image.attr("data-ingre2", i);
+        image.attr("data-nameofDrink", Drink);
+        imgDiv.append(category);
+        imgDiv.append(image);
+        $(".DrinkPicture").prepend(imgDiv);
       }
     })
     .catch(function(err) {
@@ -116,8 +115,8 @@ function getdrinkAPI()
       });
 }
 
-  function chosenRecipe() {
-    fetch(url)
+  function FoodRecipe() {
+    fetch(url)  
         .then(function (r) {
             return r.json();
         })
@@ -130,7 +129,13 @@ function getdrinkAPI()
             image.attr("src", imgURL);
             nameofFoodDiv.append(dish);
             foodPic.append(image);
-            liDiv.append(ingredients);
+            for(i = 0; i <10; i++)
+            {
+              if(ingredients[firstarray][i] != null)
+              {
+                liDiv.append(ingredients[firstarray][i] + ", ");
+              }
+            }
             $(".specificRecipe").prepend(nameofFoodDiv);
             $(".foodPic").prepend(foodPic)
             $(".ingredientList").prepend(liDiv)
@@ -139,6 +144,38 @@ function getdrinkAPI()
             console.error('Fetch Error :-S', err);
         });
 }
+  function CocktailRecipe() 
+  {
+    fetch(urlDrink)  
+        .then(function (r) {
+            return r.json();
+        })
+        .then(function (data) {
+            var nameofDrinkDiv = $("<div>")
+            var DrinkPic = $("<div>")
+            var DrinkDiv = $("<li>")
+            var drink = $("<h2>").text(Drink);
+            var image = $("<img>");
+            image.attr("src", Diskimg);
+            nameofDrinkDiv.append(drink);
+            DrinkPic.append(image);
+
+            for(i = 0; i <10; i++)
+            {
+              if(Drinkingredients[secondarray][i] != null && Drinkingredients[secondarray][i] != "")
+              {
+                DrinkDiv.append(Drinkingredients[secondarray][i] + ", "); 
+              }                   
+            } 
+
+            $(".specificRecipe").prepend(nameofDrinkDiv);
+            $(".foodPic").prepend(DrinkPic)
+            $(".ingredientList").prepend(DrinkDiv)            
+        })  
+        .catch(function (err) {
+            console.error('Fetch Error :-S', err);
+        });
+  }
 
 
 $('#search-recipe-btn').on("click", function(event)
