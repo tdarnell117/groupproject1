@@ -114,7 +114,7 @@ function getdrinkAPI()
     .catch(function(err) {
         console.error('Fetch Error :-S', err);
       });
-  }
+}
 
   function chosenRecipe() {
     fetch(url)
@@ -146,7 +146,7 @@ $('#search-recipe-btn').on("click", function(event)
   event.preventDefault()
   // Grabs user input
   var searchfood = $("#food-input").val().trim()
-}
+})
 
 
 

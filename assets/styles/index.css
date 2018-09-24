@@ -2,9 +2,6 @@ body{
     padding-top: 70px;
 }
 
-.container{
-    padding-top: 70px;
-}
 
 @media screen and (min-width:768px) and (max-width:991px) {
     #intro-h{
@@ -138,7 +135,6 @@ h2{
 }
 
 
-
 .font {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
@@ -151,8 +147,6 @@ h2{
     font-size: 25px;
     color: black;
 }
-
-
 
 
 .btnstyle {
@@ -214,6 +208,7 @@ img{
 .RecipePicture, .DrinkPicture{
     margin-top: 10px;
     margin-right: 600px;
+    margin-left: 20px;
 }
 
 #container-comment, #container-recipe{
@@ -242,6 +237,19 @@ img{
     display: inline;
 }
 
-.searchfoodbutton, .searchdrinkbutton{
-    margin-right: 30px;
+.search-bar{
+    padding: 50px;
+}
+
+.searchfoodbutton, .searchdrinkbutton{ 
+    margin-right: 40px;
+    margin-bottom: 10px;
+}
+
+.searchfood, .searchdrink{
+    margin-bottom: 10px;
+}
+
+.afterClick{
+    color: black;
 }
