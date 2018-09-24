@@ -118,6 +118,6 @@ function getdrinkAPI()
     .catch(function(err) {
         console.error('Fetch Error :-S', err);
       });
-}
+})
 
 
