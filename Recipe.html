@@ -59,51 +59,62 @@
             </div>
           
             <!-- Display Search Results -->
-            <div class="col-md-12 jumbotron Searchcontainer" id="container-recipe">
-                <div class="search-bar">
-                    <form class="form-inline" action="/action_page.php">
-                        <input class="form-control mr-sm-2 searchfood" type="text" placeholder="Search Food">
-                        <button class="btn btn-success searchfoodbutton" type="submit" data-toggle="tooltip" title="Search Food">Search
-                            Food Recipe <span class="icon ion-md-pizza"></span></button>
-                    </form>
-                    <form class="form-inline" action="/action_page.php">
-                        <input class="form-control mr-sm-2 searchdrink" type="text" placeholder="Search Drink">
-                        <button class="btn btn-success searchdrinkbutton" type="submit" data-toggle="tooltip" title="Search Drink">Search
-                            Drink Recipe <span class="icon ion-md-beer"></span></button>
-                    </form>
+            <div class="jumbotron">
+                <div class="col-md-12 Searchcontainer" id="container-recipe">
+                    <div class="search-bar">
+                        <form class="form-inline" action="/action_page.php">
+                            <input class="form-control mr-sm-2 searchfood" type="text" placeholder="Search Food">
+                            <button class="btn btn-success searchfoodbutton" type="submit" data-toggle="tooltip" title="Search Food">Search
+                                Food Recipe <span class="icon ion-md-pizza"></span></button>
+                        </form>
+                        <form class="form-inline" action="/action_page.php">
+                            <input class="form-control mr-sm-2 searchdrink" type="text" placeholder="Search Drink">
+                            <button class="btn btn-success searchdrinkbutton" type="submit" data-toggle="tooltip" title="Search Drink">Search
+                                Drink Recipe <span class="icon ion-md-beer"></span></button>
+                        </form>
+                    </div>
+                    <div class="container">
+                        <div class="row RecipePicture">
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="DrinkPicture">
+                        </div>
+                    </div>
                 </div>
-                <div class="container RecipePicture"></div>
-                <div class="container DrinkPicture"></div>
-            </div>
 
-            <!-- After on click result image, will display the Recipe here -->
-            <div class="col-md-12 jumbotron afterClick" id="container-recipe-detail">
-                <div class="row" id="specificReuslt-section">
-                    <div class="col-md-12">
-                        <div class="card" style="width: 900px">
-                            <div class="card-header specificRecipe">
-                            </div>
-                            <div class="card-body foodPic">
-                            </div>
-                        </div>
-                        <div class="card" style="width: 900px">
-                            <div class="card-header ingredientHead">
-                                Ingredients
-                            </div>
-                            <div class="card-body ingredientList">
-                            </div>
-                        </div>
+                <!-- After on click result image, will display the Recipe here -->
+                <div class="container">
+                    <div class="afterClick" id="container-recipe-detail">
+                        <div class="row" id="specificReuslt-section">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header specificRecipe">
+                                    </div>
+                                    <div class="card-body foodPic">
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header ingredientHead">
+                                        Ingredients
+                                    </div>
+                                    <div class="card-body ingredientList">
+                                    </div>
+                                </div>
 
-                        <div class="card" style="width: 900px">
-                            <div class="card-header informationHead">
-                                Information
+                                <div class="card">
+                                    <div class="card-header informationHead">
+                                        Information
+                                    </div>
+                                    <div class="card-body informationList">
+                                    </div>
+                                </div>
+                                <div class="card hidedrink">
+                                    <a href="#" class="btn btn-success btn-lg btn-block source" role="button"
+                                        aria-pressed="true">View
+                                        the Recipe</a>
+                                </div>
                             </div>
-                            <div class="card-body informationList">
-                            </div>
-                        </div>
-                        <div class="card hidedrink" style="width: 900px">
-                            <a href="#" class="btn btn-success btn-lg btn-block source" role="button" aria-pressed="true">View
-                                the Recipe</a>
                         </div>
                     </div>
                 </div>

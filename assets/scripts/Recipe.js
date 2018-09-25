@@ -63,7 +63,7 @@ function getfoodAPI() {
       for (i = 0; i < 10; i++) {
         foodID = data.matches[i].id;
         Dish = data.matches[i].recipeName;
-        var imgDiv = $("<li>");
+        var imgDiv = $("<div class=col-md-4>");
         imgURL = data.matches[i].imageUrlsBySize["90"];
         var rate = $("<h4>").text("Rating: " + data.matches[i].rating);
         var name = $("<h4>").text(data.matches[i].recipeName);
