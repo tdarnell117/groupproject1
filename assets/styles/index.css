@@ -1,20 +1,27 @@
 body{
     padding-top: 70px;
+    background-color: black;
 }
 
 
 @media screen and (min-width:768px) and (max-width:991px) {
     #intro-h{
-        font-size: 50px;
+        font-size: 75px;
+        margin-top:40px;
     }
     #intro-l{
         font-size: 30px;
+    }
+
+    #footer {
+        margin-top:200px
     }
 }
     
 @media screen and (min-width:368px) and (max-width:768px) {
     #intro-h{
-        font-size: 40px;
+        font-size: 75px;
+        margin-top:40px;
     }
     #intro-l{
         font-size: 20px;
@@ -46,7 +53,7 @@ body{
 }
 
 .jumbotron { 
-    background-image: url("../images/background11.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/background11.jpg");
     border-radius: 0px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -147,7 +154,7 @@ h2{
 .font2 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-size: 14px;
     color: black;
 }
 
@@ -322,4 +329,9 @@ div.a{
 
 .card-header {
     text-align: center;
+}
+
+.btn-success {
+    background-color: #17a2b8;
+    border-color: #17a2b8
 }
