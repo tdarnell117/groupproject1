@@ -274,6 +274,7 @@ img{
 
 .afterClick{
     color: black;
+
 }
 
 
@@ -313,4 +314,12 @@ div.a{
 
 .ingredientList{
     font-size: 18px;
+}
+
+.foodPic {
+    text-align: center;
+}
+
+.card-header {
+    text-align: center;
 }
