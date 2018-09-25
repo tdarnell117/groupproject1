@@ -4,6 +4,7 @@ var url2 = ""
 var urlDrink = ""
 var ingredients = new Array()
 var Drinkingredients = new Array()
+var instruction = new Array()
 var Dish = ""
 var imgURL = ""
 var Diskimg = ""
@@ -11,6 +12,7 @@ var firstarray = ""
 var secondarray = ""
 var Drink = ""
 var foodID = ""
+
 //hide the Recepi page 
 $(".afterClick").hide();
 
@@ -93,15 +95,17 @@ function getdrinkAPI() {
     .then(function (data) {
       $('.RecipePicture').empty()
       $('.DrinkPicture').empty()
+      console.log(data)
       for (i = 0; i < 10; i++) {
         Drink = data.drinks[i].strDrink;
+        instruction[i] = data.drinks[i].strInstructions;
         var imgDiv = $("<li>");
+        var category = $("<h4>").text(Drink);
+        var image = $("<img>");
         Diskimg = data.drinks[i].strDrinkThumb;
         Drinkingredients[i] = [data.drinks[i].strIngredient1, data.drinks[i].strIngredient2, data.drinks[i].strIngredient3,
         data.drinks[i].strIngredient4, data.drinks[i].strIngredient5, data.drinks[i].strIngredient6, data.drinks[i].strIngredient7,
         data.drinks[i].strIngredient8, data.drinks[i].strIngredient9, data.drinks[i].strIngredient10]
-        var category = $("<h4>").text(data.drinks[i].strCategory);
-        var image = $("<img>");
         image.attr("src", Diskimg);
         image.attr("class", "icon");
         image.attr("data-ingre2", i);
@@ -136,8 +140,8 @@ function FoodRecipe() {
       var infoDiv = $("<div>");
       var dish = $("<h2>").text(Dish);
       var image = $("<img>");
-      image.attr("src", imgURL);  
-      $(".source").attr("href", sourceURL)  ;
+      image.attr("src", imgURL);
+      $(".source").attr("href", sourceURL);
       nameofFoodDiv.append(dish);
       infoDiv.append();
       foodPic.append(image);
@@ -164,15 +168,17 @@ function FoodRecipe() {
 
 //Get the information for the Drink page
 function CocktailRecipe() {
-
-  var nameofDrinkDiv = $("<div>")
-  var DrinkPic = $("<div>")
-  var DrinkDiv = $("<li>")
+  $(".hidedrink").hide();
+  var nameofDrinkDiv = $("<div>");
+  var InstructionDrink = $("<div>");
+  var DrinkPic = $("<div>");
+  var DrinkDiv = $("<li>");
   var drink = $("<h2>").text(Drink);
   var image = $("<img>");
   image.attr("src", Diskimg);
   nameofDrinkDiv.append(drink);
   DrinkPic.append(image);
+  InstructionDrink.append(instruction[secondarray])
 
   for (i = 0; i < 10; i++) {
     if (Drinkingredients[secondarray][i] != null && Drinkingredients[secondarray][i] != "") {
@@ -183,6 +189,8 @@ function CocktailRecipe() {
   $(".specificRecipe").prepend(nameofDrinkDiv);
   $(".foodPic").prepend(DrinkPic)
   $(".ingredientList").prepend(DrinkDiv)
+  $(".informationHead").text("Instruction")
+  $(".informationList").prepend(InstructionDrink)
 }
 
 
