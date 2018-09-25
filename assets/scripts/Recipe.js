@@ -63,8 +63,8 @@ function getfoodAPI() {
         var imgDiv = $("<li>");
         imgURL = data.matches[i].imageUrlsBySize["90"];
         ingredients[i] = data.matches[i].ingredients;
-        var rate = $("<h6>").text("Rating: " + data.matches[i].rating);
-        var time = $("<h6>").text("Cook Time: " + data.matches[i].totalTimeInSeconds);
+        var rate = $("<h4>").text("Rating: " + data.matches[i].rating);  
+        var time = $("<h4>").text("Cook Time: " +data.matches[i].totalTimeInSeconds);  
         var image = $("<img>");
         image.attr("src", imgURL);
         image.attr("class", "icon");
@@ -96,11 +96,11 @@ function getdrinkAPI() {
       for (i = 0; i < 10; i++) {
         Drink = data.drinks[i].strDrink;
         var imgDiv = $("<li>");
-        Diskimg = data.drinks[i].strDrinkThumb;
-        Drinkingredients[i] = [data.drinks[i].strIngredient1, data.drinks[i].strIngredient2, data.drinks[i].strIngredient3,
-        data.drinks[i].strIngredient4, data.drinks[i].strIngredient5, data.drinks[i].strIngredient6, data.drinks[i].strIngredient7,
-        data.drinks[i].strIngredient8, data.drinks[i].strIngredient9, data.drinks[i].strIngredient10]
-        var category = $("<p>").text(data.drinks[i].strCategory);
+        Diskimg = data.drinks[i].strDrinkThumb; 
+        Drinkingredients[i] = [data.drinks[i].strIngredient1,data.drinks[i].strIngredient2,data.drinks[i].strIngredient3,
+        data.drinks[i].strIngredient4,data.drinks[i].strIngredient5,data.drinks[i].strIngredient6,data.drinks[i].strIngredient7,
+        data.drinks[i].strIngredient8,data.drinks[i].strIngredient9,data.drinks[i].strIngredient10]
+        var category = $("<h4>").text(data.drinks[i].strCategory); 
         var image = $("<img>");
         image.attr("src", Diskimg);
         image.attr("class", "icon");
