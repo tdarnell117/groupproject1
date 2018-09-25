@@ -1,185 +1,200 @@
 //Click button function
 var url = ""
+var url2 = ""
 var urlDrink = ""
 var ingredients = new Array()
 var Drinkingredients = new Array()
+var instruction = new Array()
 var Dish = ""
 var imgURL = ""
 var Diskimg = ""
 var firstarray = ""
 var secondarray = ""
 var Drink = ""
+var foodID = ""
 
+//hide the Recepi page 
 $(".afterClick").hide();
 
-$(".searchfoodbutton").on("click", function(event)
-{
+//When you click the searchFood button
+$(".searchfoodbutton").on("click", function (event) {
   event.preventDefault();
-  url = "https://api.yummly.com/v1/api/recipes?_app_id=fc9ece1f&_app_key=235229a497e877c3ca37916f4cdd111c" + "&q=" + $(".searchfood").val() +"&requirePictures=true" + "&maxResult=10&start=10";
+  url = "https://api.yummly.com/v1/api/recipes?_app_id=fc9ece1f&_app_key=235229a497e877c3ca37916f4cdd111c" + "&q=" + $(".searchfood").val() + "&requirePictures=true" + "&maxResult=10&start=10";
   getfoodAPI();
 })
 
-$(".searchdrinkbutton").on("click", function(event)
-{
+//When you click the searchDrink button
+$(".searchdrinkbutton").on("click", function (event) {
   event.preventDefault();
   urlDrink = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + $(".searchdrink").val();
   getdrinkAPI();
 })
 
-//click on pictures function
-$(document).on("click", "img.icon", function() 
-{  
+//click on Images function
+$(document).on("click", "img.icon", function () {
   $('.RecipePicture').empty()
   $('.DrinkPicture').empty()
   $(".afterClick").show();
   $(".Searchcontainer").hide();
   Dish = $(this).attr("data-nameofDish");
-  imgURL = $(this).attr("data-ImageofDish");
   firstarray = $(this).attr("data-ingre");
   secondarray = $(this).attr("data-ingre2");
   Drink = $(this).attr("data-nameofDrink");
   Diskimg = $(this).attr("src");
-  
-  FoodRecipe(); 
-  CocktailRecipe();
+  foodID = $(this).attr("data-foodID");
+  var type = $(this).attr("data-typeofImg");
+  if (type === "food") {
+    FoodRecipe();
+  }
+  else {
+    CocktailRecipe();
+  }
 })
 
-//get API and add images, rating in html
-function getfoodAPI()
-{
-  fetch(url)     
-  .then(function(r) {
+//get food API and add images, rating in html
+function getfoodAPI() {
+  fetch(url)
+    .then(function (r) {
       return r.json();
-        })  
-  .then(function(data)
-    {
+    })
+    .then(function (data) {
       $('.RecipePicture').empty()
       $('.DrinkPicture').empty()
-      for(i = 0; i<10; i++)
-      {
+      for (i = 0; i < 10; i++) {
+        foodID = data.matches[i].id;
         Dish = data.matches[i].recipeName;
         var imgDiv = $("<li>");
-        imgURL = data.matches[i].imageUrlsBySize["90"]; 
-        ingredients[i] = data.matches[i].ingredients;
-        var rate = $("<h4>").text("Rating: " + data.matches[i].rating);  
-        var time = $("<h4>").text("Cook Time: " +data.matches[i].totalTimeInSeconds);  
+        imgURL = data.matches[i].imageUrlsBySize["90"];
+        var rate = $("<h4>").text("Rating: " + data.matches[i].rating);
+        var name = $("<h4>").text(data.matches[i].recipeName);
         var image = $("<img>");
         image.attr("src", imgURL);
         image.attr("class", "icon");
         image.attr("data-ingre", i)
         image.attr("data-nameofDish", Dish);
-        image.attr("data-ImageofDish", imgURL);
+        image.attr("data-typeofImg", "food");
+        image.attr("data-foodID", foodID);
         imgDiv.append(rate);;
-        imgDiv.append(time);
+        imgDiv.append(name);
         imgDiv.append(image);
         $(".RecipePicture").prepend(imgDiv);
-      } 
-    }) 
+      }
+    })
 
-  .catch(function(err) {
+    .catch(function (err) {
       console.error('Fetch Error :-S', err);
     });
 }
 
-function getdrinkAPI()
-{
-  fetch(urlDrink)     
-  .then(function(r) {
+//get Drinks API and add images
+function getdrinkAPI() {
+  fetch(urlDrink)
+    .then(function (r) {
       return r.json();
-        })  
-  .then(function(data)
-    {
+    })
+    .then(function (data) {
       $('.RecipePicture').empty()
       $('.DrinkPicture').empty()
-      for(i = 0; i<10; i++)
-      {
+      console.log(data)
+      for (i = 0; i < 10; i++) {
         Drink = data.drinks[i].strDrink;
+        instruction[i] = data.drinks[i].strInstructions;
         var imgDiv = $("<li>");
-        Diskimg = data.drinks[i].strDrinkThumb; 
-        Drinkingredients[i] = [data.drinks[i].strIngredient1,data.drinks[i].strIngredient2,data.drinks[i].strIngredient3,
-        data.drinks[i].strIngredient4,data.drinks[i].strIngredient5,data.drinks[i].strIngredient6,data.drinks[i].strIngredient7,
-        data.drinks[i].strIngredient8,data.drinks[i].strIngredient9,data.drinks[i].strIngredient10]
-        var category = $("<h4>").text(data.drinks[i].strCategory); 
+        var category = $("<h4>").text(Drink);
         var image = $("<img>");
+        Diskimg = data.drinks[i].strDrinkThumb;
+        Drinkingredients[i] = [data.drinks[i].strIngredient1, data.drinks[i].strIngredient2, data.drinks[i].strIngredient3,
+        data.drinks[i].strIngredient4, data.drinks[i].strIngredient5, data.drinks[i].strIngredient6, data.drinks[i].strIngredient7,
+        data.drinks[i].strIngredient8, data.drinks[i].strIngredient9, data.drinks[i].strIngredient10]
         image.attr("src", Diskimg);
         image.attr("class", "icon");
         image.attr("data-ingre2", i);
         image.attr("data-nameofDrink", Drink);
+        image.attr("data-typeofImg", "drink");
         imgDiv.append(category);
         imgDiv.append(image);
         $(".DrinkPicture").prepend(imgDiv);
       }
     })
-    .catch(function(err) {
-        console.error('Fetch Error :-S', err);
-      });
+    .catch(function (err) {
+      console.error('Fetch Error :-S', err);
+    });
 }
 
-  function FoodRecipe() {
-    fetch(url)  
-        .then(function (r) {
-            return r.json();
-        })
-        .then(function (data) {           
-            var nameofFoodDiv = $("<div>")
-            var foodPic = $("<div>")
-            var liDiv = $("<li>")
-            var dish = $("<h2>").text(Dish);
-            var image = $("<img>");
-            image.attr("src", imgURL);
-            nameofFoodDiv.append(dish);
-            foodPic.append(image);
-            for(i = 0; i <10; i++)
-            {
-              if(ingredients[firstarray][i] != null)
-              {
-                liDiv.append(ingredients[firstarray][i] + ", ");
-              }
-            }
-            $(".specificRecipe").prepend(nameofFoodDiv);
-            $(".foodPic").prepend(foodPic)
-            $(".ingredientList").prepend(liDiv)
-            })  
-        .catch(function (err) {
-            console.error('Fetch Error :-S', err);
-        });
+//Get the information for the Recipe page
+function FoodRecipe() {
+  fetch("https://api.yummly.com/v1/api/recipe/" + foodID + "?_app_id=fc9ece1f&_app_key=235229a497e877c3ca37916f4cdd111c")
+    .then(function (r) {
+      return r.json();
+    })
+    .then(function (data) {
+      imgURL = data.images[0].hostedLargeUrl;
+      ingredients = data.ingredientLines;
+      var sourceURL = data.source.sourceRecipeUrl;
+      var cookTime = $("<div>").text("Total time to cook: " + data.totalTime);
+      var numberOfSer = $("<div>").text("Number of people serving: " + data.numberOfServings);
+      var rate = $("<div>").text("Rate: " + data.rating);
+      var nameofFoodDiv = $("<div>");
+      var foodPic = $("<div>");
+      var liDiv = $("<li>");
+      var infoDiv = $("<div>");
+      var dish = $("<h2>").text(Dish);
+      var image = $("<img>");
+      image.attr("src", imgURL);
+      $(".source").attr("href", sourceURL);
+      nameofFoodDiv.append(dish);
+      infoDiv.append();
+      foodPic.append(image);
+      infoDiv.append(cookTime);
+      infoDiv.append(numberOfSer);
+      infoDiv.append(rate);
+      for (i = 0; i < 10; i++) {
+        if (ingredients[i] != null && ingredients[i] != "") {
+          liDiv.append("<div>" + ingredients[i] + "</div>");
+        }
+
+      }
+      $(".specificRecipe").prepend(nameofFoodDiv);
+      $(".foodPic").prepend(foodPic)
+      $(".ingredientList").append(liDiv)
+      $(".informationList").append(infoDiv)
+    })
+    .catch(function (err) {
+      console.error('Fetch Error :-S', err);
+    })
+
+
 }
-  function CocktailRecipe() 
-  {
-    fetch(urlDrink)  
-        .then(function (r) {
-            return r.json();
-        })
-        .then(function (data) {
-            var nameofDrinkDiv = $("<div>")
-            var DrinkPic = $("<div>")
-            var DrinkDiv = $("<li>")
-            var drink = $("<h2>").text(Drink);
-            var image = $("<img>");
-            image.attr("src", Diskimg);
-            nameofDrinkDiv.append(drink);
-            DrinkPic.append(image);
 
-            for(i = 0; i <10; i++)
-            {
-              if(Drinkingredients[secondarray][i] != null && Drinkingredients[secondarray][i] != "")
-              {
-                DrinkDiv.append(Drinkingredients[secondarray][i] + ", "); 
-              }                   
-            } 
+//Get the information for the Drink page
+function CocktailRecipe() {
+  $(".hidedrink").hide();
+  var nameofDrinkDiv = $("<div>");
+  var InstructionDrink = $("<div>");
+  var DrinkPic = $("<div>");
+  var DrinkDiv = $("<li>");
+  var drink = $("<h2>").text(Drink);
+  var image = $("<img>");
+  image.attr("src", Diskimg);
+  nameofDrinkDiv.append(drink);
+  DrinkPic.append(image);
+  InstructionDrink.append(instruction[secondarray])
 
-            $(".specificRecipe").prepend(nameofDrinkDiv);
-            $(".foodPic").prepend(DrinkPic)
-            $(".ingredientList").prepend(DrinkDiv)            
-        })  
-        .catch(function (err) {
-            console.error('Fetch Error :-S', err);
-        });
+  for (i = 0; i < 10; i++) {
+    if (Drinkingredients[secondarray][i] != null && Drinkingredients[secondarray][i] != "") {
+      DrinkDiv.append(Drinkingredients[secondarray][i] + ", ");
+    }
   }
 
+  $(".specificRecipe").prepend(nameofDrinkDiv);
+  $(".foodPic").prepend(DrinkPic)
+  $(".ingredientList").prepend(DrinkDiv)
+  $(".informationHead").text("Instruction")
+  $(".informationList").prepend(InstructionDrink)
+}
 
-$('#search-recipe-btn').on("click", function(event)
-{
+
+$('#search-recipe-btn').on("click", function (event) {
   event.preventDefault()
   // Grabs user input
   var searchfood = $("#food-input").val().trim()
