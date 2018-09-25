@@ -23,7 +23,7 @@
 </head>
 
 <body>
-   
+
     <div class="container-fluid">
         <div class="col-sm-12">
             <!-- Navbar  -->
@@ -38,14 +38,15 @@
                     <ul class="nav navbar-nav">
                         <input id="txtEmail" class="d-none" type="email" placeholder="Email">
                         <input id="txtPassword" class="d-none" type="password" placeholder="Password">
-                        <button id="btnSignUp" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Sign Up"><span
-                                class="icon ion-md-person-add Signup-Icon"></span></button>
-                        <button id="btnLogin" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Login"><span
-                                class="icon ion-md-person Login-Icon"></span></button>
+                        <button id="btnSignUp" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Sign Up">
+                            <span class="icon ion-md-person-add Signup-Icon"></span>
+                        </button>
+                        <button id="btnLogin" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Login">
+                            <span class="icon ion-md-person Login-Icon"></span>
+                        </button>
                         <!-- Dropdwon list after login -->
                         <div id="userInfo" class="dropdown d-none">
-                            <button class="btn btn-info dropdown-toggle" type="button" id="userInfoBtn" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-info dropdown-toggle" type="button" id="userInfoBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Username
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -57,25 +58,39 @@
                     </ul>
                 </div>
             </div>
-          
+
             <!-- Display Search Results -->
             <div class="jumbotron">
                 <div class="col-md-12 Searchcontainer" id="container-recipe">
                     <div class="search-bar">
                         <form class="form-inline" action="/action_page.php">
                             <input class="form-control mr-sm-2 searchfood" type="text" placeholder="Search Food">
-                            <button class="btn btn-success searchfoodbutton" type="submit" data-toggle="tooltip" title="Search Food">Search
-                                Food Recipe <span class="icon ion-md-pizza"></span></button>
+                            <button class="btn btn-success searchfoodbutton" type="submit" data-toggle="tooltip" title="Search Food">Search Food Recipe
+                                <span class="icon ion-md-pizza"></span>
+                            </button>
                         </form>
                         <form class="form-inline" action="/action_page.php">
                             <input class="form-control mr-sm-2 searchdrink" type="text" placeholder="Search Drink">
-                            <button class="btn btn-success searchdrinkbutton" type="submit" data-toggle="tooltip" title="Search Drink">Search
-                                Drink Recipe <span class="icon ion-md-beer"></span></button>
+                            <button class="btn btn-success searchdrinkbutton" type="submit" data-toggle="tooltip" title="Search Drink">Search Drink Recipe
+                                <span class="icon ion-md-beer"></span>
+                            </button>
                         </form>
                     </div>
                     <div class="container">
                         <div class="row RecipePicture">
                         </div>
+                        <!-- Footer -->
+                        <footer class="container-fluid footer2">
+                            <a href="index.html">
+                                <span class="icon ion-md-home" data-toggle="tooltip" title="Home" id="footer-Icon"></span>
+                            </a>
+                            <a href="feedback.html">
+                                <span class="icon ion-md-paper" data-toggle="tooltip" title="View Feedback" id="footer-Icon"></span>
+                            </a>
+                            <a href="Recipe.html">
+                                <span class="icon ion-md-search" data-toggle="tooltip" title="Search Recipe" id="footer-Icon"></span>
+                            </a>
+                        </footer>
                     </div>
                     <div class="container">
                         <div class="DrinkPicture">
@@ -110,9 +125,7 @@
                                     </div>
                                 </div>
                                 <div class="card hidedrink">
-                                    <a href="#" class="btn btn-success btn-lg btn-block source" role="button"
-                                        aria-pressed="true">View
-                                        the Recipe</a>
+                                    <a href="#" class="btn btn-success btn-lg btn-block source" role="button" aria-pressed="true">View the Recipe</a>
                                 </div>
                             </div>
                         </div>
@@ -121,13 +134,17 @@
             </div>
 
             <!-- Footer -->
-            <footer class="container-fluid footer">     
-                    <a href="index.html"><span class="icon ion-md-home" data-toggle="tooltip" title="Home" id="footer-Icon"></span></a>
-                    <a href="feedback.html"><span class="icon ion-md-paper" data-toggle="tooltip" title="View Feedback"
-                            id="footer-Icon"></span></a>
-                    <a href="Recipe.html"><span class="icon ion-md-search" data-toggle="tooltip" title="Search Recipe"
-                            id="footer-Icon"></span></a>
-            </footer>   
+            <footer class="container-fluid footer">
+                <a href="index.html">
+                    <span class="icon ion-md-home" data-toggle="tooltip" title="Home" id="footer-Icon"></span>
+                </a>
+                <a href="feedback.html">
+                    <span class="icon ion-md-paper" data-toggle="tooltip" title="View Feedback" id="footer-Icon"></span>
+                </a>
+                <a href="Recipe.html">
+                    <span class="icon ion-md-search" data-toggle="tooltip" title="Search Recipe" id="footer-Icon"></span>
+                </a>
+            </footer>
 
         </div>
     </div>
