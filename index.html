@@ -10,8 +10,9 @@
     <!-- Bootstrap CDN Library -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
     <!-- Ionic Framework for button icon -->
     <link href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css" rel="stylesheet">
 
@@ -22,71 +23,82 @@
 
 <body>
     <!-- Navbar  -->
-    <div class="navbar navbar-default navbar-fix-top navbar-expand" id="header-nav"> 
-        <div class="navbar-header">   
-                <a class="navbar-brand" id="PageName" href="index.html" >
-                    <img src="./assets/images/chef.jpg" id="chef-img" alt="chef">CookBook
-                    <img src="./assets/images/dishes.jpg" id="dishes-img" alt="chef">
-                </a>   
-        </div>
-        <!-- Login Section -->
-        <div class="collapse navbar-collapse justify-content-end">
-            <ul class="nav navbar-nav">
-                <input id="txtEmail" class="d-none" type="email" placeholder="Email">
-                <input id="txtPassword" class="d-none" type="password" placeholder="Password">        
-                <button id="btnSignUp" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Sign Up"><span class="icon ion-md-person-add Signup-Icon"></span></button>
-                <button id="btnLogin" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Login"><span class="icon ion-md-person Login-Icon"></span></button>     
-                <!-- Dropdwon list after login -->
-                <div id="userInfo" class="dropdown d-none">
-                    <button class="btn btn-info dropdown-toggle" type="button" id="userInfoBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Username
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item" type="button">Settings</button>
-                        <button class="dropdown-item" type="button">Your Favourite Recipes</button>
-                        <button id="btnLogout" class="dropdown-item btn btn-info" type="button">Log out</button>
-                    </div>
-                </div>         
-            </ul> 
+    <div class="container-fluid">
+        <div class="col-sm-12">
+            <div class="navbar navbar-default navbar-fix-top navbar-expand" id="header-nav">
+                <div class="navbar-header">
+                    <a class="navbar-brand" id="PageName" href="index.html">
+                        <img src="./assets/images/chef.jpg" id="chef-img" alt="chef">CookBook
+                    </a>
+                </div>
+                <!-- Login Section -->
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="nav navbar-nav">
+                        <input id="txtEmail" class="d-none" type="email" placeholder="Email">
+                        <input id="txtPassword" class="d-none" type="password" placeholder="Password">
+                        <button id="btnSignUp" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Sign Up"><span
+                                class="icon ion-md-person-add Signup-Icon"></span></button>
+                        <button id="btnLogin" class="btn btn-info d-none" type="button" data-toggle="tooltip" title="Login"><span
+                                class="icon ion-md-person Login-Icon"></span></button>
+                        <!-- Dropdwon list after login -->
+                        <div id="userInfo" class="dropdown d-none">
+                            <button class="btn btn-info dropdown-toggle" type="button" id="userInfoBtn" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Username
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <button class="dropdown-item" type="button">Settings</button>
+                                <button class="dropdown-item" type="button">Your Favourite Recipes</button>
+                                <button id="btnLogout" class="dropdown-item btn btn-info" type="button">Log out</button>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
     <!--Jumbotron Container-->
-    <div class="col-md-12 jumbotron">
+    <div class="jumbotron">
         <!-- Introduction Section -->
         <div class="row" id="row-Intro">
             <div class="col-md-6">
                 <h1 class="font-italic" id="intro-h">Simply, Recipes!</h1>
-                <h2 class="font-italic" id="intro-l">This is a place for beginning and advanced home cooks to find simple yet challenging recipes to improve your culinary
-                                        skills, or just impress some friends! Start looking for an addition to your cookbook here.</h2>
-            </div>    
-        </div>  
+                <h2 class="font-italic" id="intro-l">This is a place for beginning and advanced home cooks to
+                    find simple yet challenging recipes to improve your culinary
+                    skills, or just impress some friends! Start looking for an addition to your cookbook here.</h2>
+            </div>
+        </div>
         <div id="row-IntroBtn">
             <a href="Recipe.html">
-                    <button type="button" class="btn btn-success btn-bg" id="lets-cook-btn" data-toggle="tooltip" title="Click Me!">Let's Cook!</button>
-            </a> 
+                <button type="button" class="btn btn-success btn-bg" id="lets-cook-btn" data-toggle="tooltip" title="Click Me!">Let's
+                    Cook!</button>
+            </a>
         </div>
         <!-- Feedback Section  -->
-        <div> 
+        <div>
             <div class="row" id="feedback-section">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <p class="font2">If you enjoyed our recipes and would like to help us improve our website,<br>
-                                                please give us your feedback below!
+                            <p class="font2">If you enjoyed our recipes and would like to help us improve our
+                                website,<br>
+                                please give us your feedback below!
                             </p>
-                        </div>                     
+                        </div>
                         <div class="card-body">
                             <div class="container-form">
-                                <form>   
-                                    <div class="form-group">  
-                                        <textarea class="form-control" id="comments-input" placeholder="Comments" rows=5></textarea>
+                                <form>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="comments-input" placeholder="Comments" rows=3></textarea>
                                     </div>
-                                    <button type="button" class="btn btn-info btn-sm" id="Submit-feedback-Btn" data-toggle="tooltip" title="Submit">Submit</button>
+                                    <button type="button" class="btn btn-info btn-sm" id="Submit-feedback-Btn"
+                                        data-toggle="tooltip" title="Submit">Submit</button>
                                     <a href="feedback.html">
-                                        <button type="button" class="btn btn-info btn-sm" id="View-feedback-Btn" data-toggle="tooltip" title="View Feedback">View Feedback</button>
+                                        <button type="button" class="btn btn-info btn-sm" id="View-feedback-Btn"
+                                            data-toggle="tooltip" title="View Feedback">View Feedback</button>
                                     </a>
-                                </form>                    
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -96,32 +108,42 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container-footer">
-            <a href="index.html"><span class="icon ion-md-home"  data-toggle="tooltip" title="Home" id="footer-Icon"></span></a>
-            <a href="feedback.html"><span class="icon ion-md-paper" data-toggle="tooltip" title="View Feedback" id="footer-Icon"></span></a> 
-            <a href="Recipe.html"><span class="icon ion-md-search" data-toggle="tooltip" title="Search Recipe" id="footer-Icon"></span></a> 
-        </div>  
-    </footer>
+    <div class="container-fluid">
+        <div class="col-sm-12">
+            <footer class="footer">
+                <div class="container-footer">
+                    <a href="index.html"><span class="icon ion-md-home" data-toggle="tooltip" title="Home" id="footer-Icon"></span></a>
+                    <a href="feedback.html"><span class="icon ion-md-paper" data-toggle="tooltip" title="View Feedback"
+                            id="footer-Icon"></span></a>
+                    <a href="Recipe.html"><span class="icon ion-md-search" data-toggle="tooltip" title="Search Recipe"
+                            id="footer-Icon"></span></a>
+                </div>
+            </footer>
+        </div>
+    </div>
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-   
-    <!-- AJAX -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-   
-    <!-- Bootsstrap -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    <!-- Moment.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+            <!-- JQuery -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
 
-    <!-- firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+            <!-- AJAX -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                crossorigin="anonymous"></script>
 
-    <!-- My js page -->
-    <script src="./assets/scripts/firebase.js"></script>
-    <script src="./assets/scripts/Recipe.js"></script>
+            <!-- Bootsstrap -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+                crossorigin="anonymous"></script>
+
+            <!-- Moment.js -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+            <!-- firebase -->
+            <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+
+            <!-- My js page -->
+            <script src="./assets/scripts/firebase.js"></script>
+            <script src="./assets/scripts/Recipe.js"></script>
 
 </body>
+
 </html>
