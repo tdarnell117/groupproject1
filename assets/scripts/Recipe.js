@@ -15,10 +15,13 @@ var foodID = ""
 
 //hide the Recepi page 
 $(".afterClick").hide();
+$(".footer2").hide();
 
 //When you click the searchFood button
 $(".searchfoodbutton").on("click", function (event) {
   event.preventDefault();
+  $(".footer2").show();
+  $(".footer").hide();
   url = "https://api.yummly.com/v1/api/recipes?_app_id=fc9ece1f&_app_key=235229a497e877c3ca37916f4cdd111c" + "&q=" + $(".searchfood").val() + "&requirePictures=true" + "&maxResult=10&start=10";
   getfoodAPI();
 })
@@ -26,6 +29,8 @@ $(".searchfoodbutton").on("click", function (event) {
 //When you click the searchDrink button
 $(".searchdrinkbutton").on("click", function (event) {
   event.preventDefault();
+  $(".footer2").hide()
+  $(".footer").show();
   urlDrink = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + $(".searchdrink").val();
   getdrinkAPI();
 })
