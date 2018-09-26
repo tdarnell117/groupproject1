@@ -138,7 +138,7 @@ function FoodRecipe() {
       ingredients = data.ingredientLines;
       var sourceURL = data.source.sourceRecipeUrl;
       var cookTime = $("<div>").text("Total time to cook: " + data.totalTime);
-      var numberOfSer = $("<div>").text("Number of people serving: " + data.numberOfServings);
+      var numberOfSer = $("<div>").text("Number of serving: " + data.numberOfServings);
       var rate = $("<div>").text("Rate: " + data.rating);
       var nameofFoodDiv = $("<div>");
       var foodPic = $("<div>");
