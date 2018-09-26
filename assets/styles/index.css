@@ -251,7 +251,7 @@ img{
     color: white;
 } 
 
-.footer{
+.footer, .footer2{
     background-color: black;
     color: white;
     font-size: 20px;
@@ -336,4 +336,9 @@ div.a{
 .btn-success {
     background-color: #17a2b8;
     border-color: #17a2b8
+}
+
+.finalImg {
+    padding-right: 50px;
+    border: none;
 }

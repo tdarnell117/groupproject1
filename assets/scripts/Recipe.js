@@ -50,6 +50,7 @@ $(document).on("click", "img.icon", function () {
   var type = $(this).attr("data-typeofImg");
   if (type === "food") {
     FoodRecipe();
+    $(".footer2").show();
   }
   else {
     CocktailRecipe();
@@ -146,6 +147,7 @@ function FoodRecipe() {
       var dish = $("<h2>").text(Dish);
       var image = $("<img>");
       image.attr("src", imgURL);
+      image.attr("class", "finalImg");
       $(".source").attr("href", sourceURL);
       nameofFoodDiv.append(dish);
       infoDiv.append();
@@ -181,6 +183,7 @@ function CocktailRecipe() {
   var drink = $("<h2>").text(Drink);
   var image = $("<img>");
   image.attr("src", Diskimg);
+  image.attr("class", "finalImg");
   nameofDrinkDiv.append(drink);
   DrinkPic.append(image);
   InstructionDrink.append(instruction[secondarray])
